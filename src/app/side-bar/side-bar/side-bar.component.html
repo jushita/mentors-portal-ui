@@ -1,0 +1,10 @@
+<mat-drawer-container class="container">
+    <mat-drawer class="side-container" mode="side" opened>
+        <mat-selection-list #shoes [multiple]="false">
+            <mat-list-option *ngFor="let item of listOfSideBarItems">
+              {{item}}
+            </mat-list-option>
+          </mat-selection-list>
+    </mat-drawer>
+    <mat-drawer-content class="main-container">Main content</mat-drawer-content>
+</mat-drawer-container>
