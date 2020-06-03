@@ -1,10 +1,11 @@
-<mat-drawer-container class="container">
-    <mat-drawer class="side-container" mode="side" opened>
-        <mat-selection-list #shoes [multiple]="false">
-            <mat-list-option *ngFor="let item of listOfSideBarItems">
-              {{item}}
-            </mat-list-option>
-          </mat-selection-list>
-    </mat-drawer>
-    <mat-drawer-content class="main-container">Main content</mat-drawer-content>
-</mat-drawer-container>
+<mat-selection-list [multiple]="false">
+    <mat-list-option (click)="homeRouting()">
+      Home
+    </mat-list-option>
+    <mat-list-option (click)="toDoRouting()">
+        To Do
+    </mat-list-option>
+    <mat-list-option (click)="messagesRouting()">
+        Message
+    </mat-list-option>
+  </mat-selection-list>

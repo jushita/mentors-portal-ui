@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'side-bar',
-  templateUrl: './side-bar.component.html',
-  styleUrls: ['./side-bar.component.css']
+  selector: 'container',
+  templateUrl: './container.component.html',
+  styleUrls: ['./container.component.css']
 })
-export class SideBarComponent implements OnInit {
-  listOfSideBarItems: string[] = ['Home', 'To-Do', 'Notes']
+export class ContainerComponent implements OnInit {
 
   constructor(private router: Router) { }
 

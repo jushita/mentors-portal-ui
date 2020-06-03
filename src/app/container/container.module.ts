@@ -1,24 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
+import { ContainerComponent } from './container/container.component';
 import { SharedModule } from '../shared/shared.module';
-import { MenuModule } from '../menu/menu.module';
 import { SideBarModule } from '../side-bar/side-bar.module';
-import { ContainerModule } from '../container/container.module';
 
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [ContainerComponent],
   imports: [
     CommonModule,
     SharedModule,
-    MenuModule,
-    SideBarModule,
-    ContainerModule
+    SideBarModule
   ],
   exports: [
-    
+    ContainerComponent
   ]
+
 })
-export class HomeModule { }
+export class ContainerModule { }
