@@ -1,0 +1,13 @@
+<div class="title">
+    <h2>
+        Current Students
+    </h2>
+</div>
+
+
+<mat-selection-list #shoes [multiple]="false">
+  <mat-list-option *ngFor="let student of students">
+    {{student}}
+    <mat-divider></mat-divider>
+  </mat-list-option>
+</mat-selection-list>

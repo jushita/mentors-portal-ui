@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ContainerComponent } from './container/container.component';
 import { SharedModule } from '../shared/shared.module';
 import { SideBarModule } from '../side-bar/side-bar.module';
+import { MainContainerModule } from '../main-container/main-container.module';
 
 
 
@@ -11,7 +12,8 @@ import { SideBarModule } from '../side-bar/side-bar.module';
   imports: [
     CommonModule,
     SharedModule,
-    SideBarModule
+    SideBarModule,
+    MainContainerModule
   ],
   exports: [
     ContainerComponent
