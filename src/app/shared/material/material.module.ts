@@ -7,6 +7,8 @@ import { MatMenuModule } from '@angular/material/menu'
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 
@@ -20,7 +22,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatMenuModule,
     MatSidenavModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCardModule
   ],
   exports: [
     CommonModule,
@@ -30,7 +33,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatMenuModule,
     MatSidenavModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCardModule
   ]
 })
 export class MaterialModule { }

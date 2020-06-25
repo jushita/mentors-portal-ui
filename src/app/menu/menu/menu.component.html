@@ -1,13 +1,15 @@
 <mat-toolbar class="menu-content">
-    <div></div>
-    Mentor's Portal
+    <div>Mentor's Portal</div>
+    <div>
+        <button mat-button>Home</button>
+        <button mat-button>Messages</button>
+    </div>
     <div class="menu-button">
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
             <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item>
-                <mat-icon>dialpad</mat-icon>
                 <span>Logout</span>
             </button>
             </mat-menu>
