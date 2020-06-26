@@ -8,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class MainContainerComponent implements OnInit {
   students: string[] = ['Student 1', 'Student 2', 'Student 3', 'Student 4', 'Student 5'];
 
-
   constructor() { }
 
   ngOnInit(): void {
+    
+  }
+
+
+  value(s: string) {
+    console.log(s)
   }
 
 }
