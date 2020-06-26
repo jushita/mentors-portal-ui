@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainContainerComponent } from './main-container/main-container.component';
 import { SharedModule } from '../shared/shared.module';
+import { MessagesModule } from '../messages/messages.module';
 
 
 
@@ -9,7 +10,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [MainContainerComponent],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    MessagesModule
   ],
   exports: [
     MainContainerComponent

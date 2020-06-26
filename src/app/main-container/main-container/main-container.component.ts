@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'main-container',
@@ -6,17 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-container.component.css']
 })
 export class MainContainerComponent implements OnInit {
-  students: string[] = ['Student 1', 'Student 2', 'Student 3', 'Student 4', 'Student 5'];
+  students: string[] = ['1', '2', '3', '4', '5'];
 
-  constructor() { }
-
-  ngOnInit(): void {
-    
+  constructor(private router: Router) { 
   }
 
 
-  value(s: string) {
-    console.log(s)
+  ngOnInit(): void {
+  }
+
+
+  navigate(s: string) {
+    console.log(s);
+    let url = `/mentee-dashboard/${s}`
+    this.router.navigateByUrl(url)
   }
 
 }

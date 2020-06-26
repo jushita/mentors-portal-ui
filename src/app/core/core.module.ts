@@ -6,6 +6,7 @@ import { SideBarModule } from '../side-bar/side-bar.module';
 import { MessagesModule } from '../messages/messages.module';
 import { ContainerModule } from '../container/container.module';
 import { MainContainerModule } from '../main-container/main-container.module';
+import { MenteeDashboardModule } from '../mentee-dashboard/mentee-dashboard.module';
 
 
 
@@ -18,7 +19,8 @@ import { MainContainerModule } from '../main-container/main-container.module';
     SideBarModule,
     MessagesModule,
     ContainerModule,
-    MainContainerModule
+    MainContainerModule,
+    MenteeDashboardModule
   ],
   exports: [
     HomeModule,
@@ -26,7 +28,8 @@ import { MainContainerModule } from '../main-container/main-container.module';
     SideBarModule,
     MessagesModule,
     ContainerModule,
-    MainContainerModule
+    MainContainerModule,
+    MenteeDashboardModule
   ]
 })
 export class CoreModule { }
