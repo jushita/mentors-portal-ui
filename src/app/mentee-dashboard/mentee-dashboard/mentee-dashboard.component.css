@@ -1,0 +1,40 @@
+/* For devices 400px and larger: */
+@media only screen and (min-device-width: 400px) {
+    .container {
+        display: grid;
+        grid-template-columns: 10% 40% 40% 10%;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 10% 20% 60% 10%;
+    font-size: 0.5rem;
+}
+
+
+.menu {
+    margin: 0px;
+    padding-left: 0px;
+}
+.profile-picture {
+    background-color: blue;
+    height: auto;
+    max-width: 100%;
+}
+.form {
+    display: grid;
+    grid-template-columns: 5% 40% 40% 5%;
+    height: 100vh;
+    background-color: blue;
+
+}
+@media only screen and (min-device-width: 400px) {
+    .form {
+        display: grid;
+        grid-template-columns: 10% 40% 40% 10%;
+        height: 100vh;
+        background-color: blue;
+
+    }
+}
