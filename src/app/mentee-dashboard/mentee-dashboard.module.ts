@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MenteeDashboardComponent } from './mentee-dashboard/mentee-dashboard.component';
 import { SharedModule } from '../shared/shared.module';
 import { MenuModule } from '../menu/menu.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -12,7 +13,6 @@ import { MenuModule } from '../menu/menu.module';
     CommonModule,
     SharedModule,
     MenuModule,
-    MenuModule
   ],
   exports: [
     MenteeDashboardComponent

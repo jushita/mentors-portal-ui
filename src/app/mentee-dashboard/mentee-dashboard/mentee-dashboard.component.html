@@ -13,19 +13,31 @@
                 <p>
                     Status: 
                 </p>
+                <p>
+                    Bio: 
+                </p>
             </mat-card>
 
         </div>
     </div>
-    
-    <div class="form one-on-one-form">
+    <div class="notes">
         <div></div>
-        <div>1st Form</div>
-    </div>
-    
-    <div class="form bootcamp-form">
-        <div></div>
-        <div>2nd Form</div>
-    </div>
-    
+        <div class="notes-container">
+            <mat-card class="notes-header-card notes-card">
+                <div>
+                    Mentor's Notes
+                </div>
+            </mat-card>
+            <div class="notes-button">
+                <button>Filter</button>
+                <button>Add New</button>
+            </div>
+            <mat-card class="notes-card" *ngFor="let note of notes">
+                <div>
+                    {{note.mentorName}} : {{note.message}}
+                </div>
+                <div class="notes-date"> {{note.date}} </div>
+            </mat-card>
+        </div>
+    </div>   
 </body>

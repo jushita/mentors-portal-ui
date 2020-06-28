@@ -42,9 +42,26 @@
     max-width: 100%;
 }
 
-.form {
+.notes {
     display: grid;
     grid-template-columns: 5% 90% 5%;
-    height: 50vh;
+    height: 100vh;
     background-color: grey;
+}
+
+.notes-container {
+    padding: 10px;
+}
+
+.notes-card {
+    margin-bottom: 5px;
+}
+
+.notes-header-card {
+    display: flex;
+    justify-content: center;
+}
+
+.notes-date {
+    font-size: 10px;
 }
