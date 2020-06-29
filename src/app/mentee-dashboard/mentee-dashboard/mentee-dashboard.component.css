@@ -65,3 +65,16 @@
 .notes-date {
     font-size: 10px;
 }
+
+table {
+    width: 100%;
+}
+  
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    width: 30%;
+}
