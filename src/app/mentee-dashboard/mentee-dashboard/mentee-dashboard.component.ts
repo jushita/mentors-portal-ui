@@ -37,18 +37,6 @@ export class MenteeDashboardComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  public notes: {}[] = [
-    {
-      'mentorName': 'mentor1',
-      'date': '01/01/2020',
-      'message': 'message goes here'
-    },
-    {
-      'mentorName': 'mentor2',
-      'date': '01/01/2020',
-      'message': 'message2 goes here'
-    }
-  ]
   constructor() { }
 
   ngOnInit(): void {
