@@ -46,7 +46,8 @@
     display: grid;
     grid-template-columns: 5% 90% 5%;
     height: 100vh;
-    background-color: grey;
+    background-color:#d3d3d3;
+    ;
 }
 
 .notes-container {
@@ -77,4 +78,14 @@ table {
 
 th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
     width: 30%;
+}
+.filter-add-new {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add-new-button {
+    background-color: purple;
+    color: white;
+    margin-left: 20px;
 }
