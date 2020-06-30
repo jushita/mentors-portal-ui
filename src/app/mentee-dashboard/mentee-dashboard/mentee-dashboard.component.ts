@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
-
-export interface Form {
-  mentorName: string;
-  date: string;
-  message: string;
-}
+import { Form } from 'src/app/models/form';
 
 const FORM_DATA: Form[] = [
   {
@@ -19,7 +14,6 @@ const FORM_DATA: Form[] = [
     message: 'message2 goes here'
   }
 ];
-
 
 @Component({
   selector: 'mentee-dashboard',
