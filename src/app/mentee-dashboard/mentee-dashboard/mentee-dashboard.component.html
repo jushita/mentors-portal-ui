@@ -1,4 +1,4 @@
-<body>
+<div>
     <menu class="menu"></menu>
     <div class="student-profile">
         <div></div>
@@ -22,13 +22,13 @@
     </div>
     <div class="notes">
         <div></div>
+
         <div class="notes-container">
             <mat-card class="notes-header-card notes-card">
                 <div>
                     Mentor's Notes
                 </div>
             </mat-card>
-
             <div class="filter-add-new">
                 <div>
                     <mat-form-field>
@@ -37,7 +37,9 @@
                     </mat-form-field>
                 </div>
                 <div>
-                    <button mat-button class="add-new-button">Add New</button>
+                    <button mat-button class="add-new-button" (click)="openDialog()">
+                        Add New
+                    </button>
                 </div>
             </div>
             
@@ -74,4 +76,4 @@
             </mat-card> -->
         </div>
     </div>   
-</body>
+</div>

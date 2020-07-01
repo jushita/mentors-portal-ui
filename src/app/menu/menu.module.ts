@@ -10,9 +10,8 @@ import { AppRoutingModule } from '../app-routing.module';
 @NgModule({
   declarations: [MenuComponent],
   imports: [
-    AppRoutingModule,
-    RouterModule,
     CommonModule,
+    RouterModule,
     SharedModule
   ],
   exports: [

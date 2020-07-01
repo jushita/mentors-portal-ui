@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenteeDashboardComponent } from './mentee-dashboard/mentee-dashboard.component';
+import { MenteeDashboardComponent, DialogData } from './mentee-dashboard/mentee-dashboard.component';
 import { SharedModule } from '../shared/shared.module';
 import { MenuModule } from '../menu/menu.module';
-import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
-  declarations: [MenteeDashboardComponent],
+  declarations: [MenteeDashboardComponent, DialogData],
   imports: [
     CommonModule,
     SharedModule,
     MenuModule,
   ],
   exports: [
-    MenteeDashboardComponent
+    MenteeDashboardComponent,
+    DialogData
   ]
 })
-export class MenteeDashboardModule { }
+export class MenteeDashboardModule { 
+  public data = true;
+}

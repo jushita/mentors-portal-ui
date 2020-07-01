@@ -24,7 +24,6 @@ export class SideBarComponent implements OnInit {
   }
 
   messagesRouting() {
-    console.log('inside message')
     this.router.navigateByUrl('/message')
   }
 

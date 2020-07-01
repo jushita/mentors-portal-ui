@@ -1,6 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import { Form } from 'src/app/models/form';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
+export interface IDialogData {
+  animal: 'panda' | 'unicorn' | 'lion';
+}
 
 const FORM_DATA: Form[] = [
   {
@@ -31,7 +36,15 @@ export class MenteeDashboardComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
+
+  openDialog() {
+    this.dialog.open(DialogData, {
+      data: {
+        animal: 'panda'
+      }
+    });
+  }
 
   ngOnInit(): void {
   }
@@ -40,3 +53,12 @@ export class MenteeDashboardComponent implements OnInit {
 
 }
 
+
+@Component({
+  selector: 'dialog-data',
+  templateUrl: 'dialog-data.html',
+})
+export class DialogData {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: IDialogData) {
+  }
+}

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainContainerComponent } from './main-container/main-container.component';
 import { SharedModule } from '../shared/shared.module';
-import { MessagesModule } from '../messages/messages.module';
 
 
 
@@ -11,7 +10,6 @@ import { MessagesModule } from '../messages/messages.module';
   imports: [
     CommonModule,
     SharedModule,
-    MessagesModule
   ],
   exports: [
     MainContainerComponent

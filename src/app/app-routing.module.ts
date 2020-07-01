@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home/home.component';
-import { MessagesComponent } from './messages/messages/messages.component';
 import { MenteeDashboardComponent } from './mentee-dashboard/mentee-dashboard/mentee-dashboard.component';
 
 
