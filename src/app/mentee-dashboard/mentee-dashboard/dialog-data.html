@@ -1,17 +1,21 @@
-<h1 mat-dialog-title>Favorite Animal</h1>
+<h3 mat-dialog-title>Enter you message here</h3>
 <div mat-dialog-content>
-  My favorite animal is:
-  <div *ngIf="data.animal">
-  </div>
-  <ul>
-    <li>
-      <span *ngIf="data.animal === 'panda'">&#10003;</span> Panda
-    </li>
-    <li>
-      <span *ngIf="data.animal === 'unicorn'">&#10003;</span> Unicorn
-    </li>
-    <li>
-      <span *ngIf="data.animal === 'lion'">&#10003;</span> Lion
-    </li>
-  </ul>
+  <mat-form-field>
+    <mat-label>Mentor's Name</mat-label>
+    <input matInput #mentorName [(ngModel)]=data readonly>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Date</mat-label>
+    <input matInput #date >
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Message</mat-label>
+    <textarea matInput #message></textarea>
+  </mat-form-field>
+    
+    
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onSubmitClick(mentorName.value, date.value, message.value)">Submit</button>
+  <!-- <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button> -->
 </div>

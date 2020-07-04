@@ -6,6 +6,7 @@ import { SideBarModule } from '../side-bar/side-bar.module';
 import { ContainerModule } from '../container/container.module';
 import { MainContainerModule } from '../main-container/main-container.module';
 import { MenteeDashboardModule } from '../mentee-dashboard/mentee-dashboard.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +19,9 @@ import { MenteeDashboardModule } from '../mentee-dashboard/mentee-dashboard.modu
     SideBarModule,
     ContainerModule,
     MainContainerModule,
-    MenteeDashboardModule
+    MenteeDashboardModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     HomeModule,
@@ -26,7 +29,9 @@ import { MenteeDashboardModule } from '../mentee-dashboard/mentee-dashboard.modu
     SideBarModule,
     ContainerModule,
     MainContainerModule,
-    MenteeDashboardModule
+    MenteeDashboardModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CoreModule { }
