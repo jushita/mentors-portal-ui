@@ -7,23 +7,17 @@ import { ContainerModule } from '../container/container.module';
 import { MainContainerModule } from '../main-container/main-container.module';
 import { MenteeDashboardModule } from '../mentee-dashboard/mentee-dashboard.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ApiService } from './services/api.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
-    HomeModule,
-    MenuModule,
-    SideBarModule,
-    ContainerModule,
-    MainContainerModule,
-    MenteeDashboardModule,
-    FormsModule,
-    ReactiveFormsModule
   ],
   exports: [
+    HttpClientModule,
     HomeModule,
     MenuModule,
     SideBarModule,
@@ -31,7 +25,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MainContainerModule,
     MenteeDashboardModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+  ],
+  providers: [
+    ApiService
   ]
 })
 export class CoreModule { }

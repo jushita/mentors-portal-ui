@@ -3,6 +3,8 @@ import {MatTableDataSource} from '@angular/material/table';
 import { Form } from 'src/app/models/form';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { getLocaleDateFormat } from '@angular/common';
+import { ApiService } from 'src/app/core/services/api.service';
+import { MenteeService } from 'src/app/core/services/mentee.service';
 
 export interface IDialogData {
   animal: 'panda' | 'unicorn' | 'lion';
@@ -37,7 +39,7 @@ export class MenteeDashboardComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, private menteeService: MenteeService) {
   }
 
   openDialog(): void {
@@ -52,6 +54,10 @@ export class MenteeDashboardComponent implements OnInit {
     });
   }
 
+  getData() {
+    let data = this.menteeService.getAllMentee().subscribe();
+    console.log(data)
+  }
   
 
   ngOnInit(): void {

@@ -5,7 +5,7 @@
         </mat-card-header>
         <mat-selection-list #shoes [multiple]="false">
             <mat-list-option *ngFor="let student of students" (click)=navigate(student)>
-              {{student}}
+              {{student.name}}
               <mat-divider></mat-divider>
             </mat-list-option>
           </mat-selection-list>      
