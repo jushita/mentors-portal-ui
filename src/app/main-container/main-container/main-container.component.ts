@@ -10,16 +10,14 @@ import { Mentee } from 'src/app/models/mentee';
   styleUrls: ['./main-container.component.css']
 })
 export class MainContainerComponent implements OnInit {
-  mentees: Mentee[];
-  public menteeList;
+  public mentees: Mentee[];
   constructor(private router: Router, private menteeService: MenteeService) { 
   }
 
   ngOnInit() {
     this.menteeService.getAllMentee().subscribe((data) => {
       this.mentees = data;
-    }
-    )
+    });
   }
   
   

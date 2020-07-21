@@ -1,10 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 import { Form } from 'src/app/models/form';
-import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import { getLocaleDateFormat } from '@angular/common';
-import { ApiService } from 'src/app/core/services/api.service';
-import { MenteeService } from 'src/app/core/services/mentee.service';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Mentee } from 'src/app/models/mentee';
 import { MessageService } from 'src/app/core/services/message.service';
@@ -14,18 +11,6 @@ export interface IDialogData {
   animal: 'panda' | 'unicorn' | 'lion';
 }
 
-const FORM_DATA: Form[] = [
-  {
-    mentorName: 'mentor1',
-    date: '01/01/2020',
-    message: 'message goes here'
-  },
-  {
-    mentorName: 'mentor2',
-    date: '01/01/2020',
-    message: 'message2 goes here'
-  }
-];
 
 @Component({
   selector: 'mentee-dashboard',
@@ -34,11 +19,11 @@ const FORM_DATA: Form[] = [
 })
 
 export class MenteeDashboardComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'notes'];
-  dataSource = new MatTableDataSource(FORM_DATA);
+  public displayedColumns: string[] = ['name', 'type', 'message'];
   public formDialogData: Form = new Form('', '', '');
   public mentee: Mentee;
   public messages: Message[];
+  public dataSource; 
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -64,11 +49,14 @@ export class MenteeDashboardComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe((res: Mentee) => {
       this.mentee = res;
     });
-    this.messageService.getAllMenteeMessage(this.mentee.id).subscribe((data) => {
+    console.log(this.mentee.id)
+    this.messageService.getAllMenteeMessage(this.mentee.id).subscribe((data: Message[]) => {
       this.messages = data;
     });
-    console.log(this.mentee)
+    this.dataSource = new MatTableDataSource();
+
   }
+
 
 }
 
@@ -76,13 +64,14 @@ export class MenteeDashboardComponent implements OnInit {
   selector: 'dialog-data',
   templateUrl: 'dialog-data.html',
 })
+
 export class DialogData {
   public mentorName: string;
   public date: string;
   public message: string;
   public newForm: Form = new Form('','','');
-
-
+  public menteeDashboardComponenet: MenteeDashboardComponent;
+  
   constructor(
     public dialogRef: MatDialogRef<DialogData>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
