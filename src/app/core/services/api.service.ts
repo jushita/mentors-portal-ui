@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from'rxjs/operators';
 import { Mentor } from 'src/app/models/mentor';
 import { Mentee } from 'src/app/models/mentee';
+import { Message } from 'src/app/models/message';
 
 const API_URL = 'http://localhost:3000'
 
@@ -20,7 +21,12 @@ export class ApiService {
     public getAllMentee(): Observable<Mentee[]> {
         return this.http
         .get<Mentee[]>(API_URL + '/mentee')
-        .pipe(tap((data) => console.log(data)))
+        .pipe(catchError(this.handleError));
+    }
+
+    public getAllMenteeMessage(id: string): Observable<Message[]> {
+        return this.http
+        .get<Message[]>(API_URL + '/message?menteeId=' + id)
         .pipe(catchError(this.handleError));
     }
 

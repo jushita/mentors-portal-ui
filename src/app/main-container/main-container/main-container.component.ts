@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { MenteeService } from 'src/app/core/services/mentee.service';
 import { Mentee } from 'src/app/models/mentee';
 
@@ -10,23 +10,26 @@ import { Mentee } from 'src/app/models/mentee';
   styleUrls: ['./main-container.component.css']
 })
 export class MainContainerComponent implements OnInit {
-  students: Mentee[];
+  mentees: Mentee[];
   public menteeList;
   constructor(private router: Router, private menteeService: MenteeService) { 
   }
 
   ngOnInit() {
     this.menteeService.getAllMentee().subscribe((data) => {
-      this.students = data;
+      this.mentees = data;
     }
     )
   }
   
   
-  navigate(s: string) {
-    console.log(s);
-    let url = `/mentee-dashboard/${s}`
-    this.router.navigateByUrl(url)
+  navigate(mentee: Mentee) {
+    let navigationExtra: NavigationExtras = {
+      queryParams: mentee
+    }
+    let name = mentee.name
+    let url = `/mentee-dashboard/${name}`
+    this.router.navigate([url], navigationExtra)
   }
 
 }

@@ -4,8 +4,8 @@
             <mat-card-title>Current Students</mat-card-title>
         </mat-card-header>
         <mat-selection-list #shoes [multiple]="false">
-            <mat-list-option *ngFor="let student of students" (click)=navigate(student)>
-              {{student.name}}
+            <mat-list-option *ngFor="let mentee of mentees" (click)=navigate(mentee)>
+              {{mentee.name}}
               <mat-divider></mat-divider>
             </mat-list-option>
           </mat-selection-list>      

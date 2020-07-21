@@ -5,6 +5,10 @@ import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog
 import { getLocaleDateFormat } from '@angular/common';
 import { ApiService } from 'src/app/core/services/api.service';
 import { MenteeService } from 'src/app/core/services/mentee.service';
+import { ActivatedRoute } from '@angular/router';
+import { Mentee } from 'src/app/models/mentee';
+import { MessageService } from 'src/app/core/services/message.service';
+import { Message } from 'src/app/models/message';
 
 export interface IDialogData {
   animal: 'panda' | 'unicorn' | 'lion';
@@ -33,13 +37,16 @@ export class MenteeDashboardComponent implements OnInit {
   displayedColumns: string[] = ['name', 'notes'];
   dataSource = new MatTableDataSource(FORM_DATA);
   public formDialogData: Form = new Form('', '', '');
+  public mentee: Mentee;
+  public messages: Message[];
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(public dialog: MatDialog, private menteeService: MenteeService) {
+  constructor(public dialog: MatDialog, public activatedRoute: ActivatedRoute, public messageService: MessageService) {
+    this.mentee = new Mentee(0, '', '', new Date(), new Date());
   }
 
   openDialog(): void {
@@ -50,17 +57,17 @@ export class MenteeDashboardComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.formDialogData = result;
-      console.log('The dialog was closed');
     });
   }
-
-  getData() {
-    let data = this.menteeService.getAllMentee().subscribe();
-    console.log(data)
-  }
   
-
   ngOnInit(): void {
+    this.activatedRoute.queryParams.subscribe((res: Mentee) => {
+      this.mentee = res;
+    });
+    this.messageService.getAllMenteeMessage(this.mentee.id).subscribe((data) => {
+      this.messages = data;
+    });
+    console.log(this.mentee)
   }
 
 }
