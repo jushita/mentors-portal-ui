@@ -10,14 +10,14 @@ import { ApiService } from 'src/app/core/services/api.service';
 })
 export class LoginComponent implements OnInit {
   public welcomeMessage;
-  public notAuthorized: string
+  public notAuthorized: string;
   constructor(private http: HttpClient, private router: Router, private api: ApiService) { 
   }
 
   ngOnInit(): void {
   }
   login(name: string, password: string) {
-    this.api.login('name1', 'password1')
+    this.api.login(name, password)
     .subscribe({
         next: (res: any) => {
           if(res) {
