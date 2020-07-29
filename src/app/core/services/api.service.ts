@@ -14,7 +14,7 @@ export class ApiService {
 
     public login(name: string, password: string): Observable<any> {
         return this.http
-        .post('http://localhost:5000' + '/login', {"name":name,"password":password})
+        .post(API_URL + '/login', {"name":name,"password":password})
         .pipe(catchError(this.handleError));
     }
 

@@ -11,7 +11,10 @@
     justify-content: center;
     align-items: center;
 }
-
+.menu {
+    margin: 0px;
+    padding-left: 0px;;
+}
 h3 {
     margin: 0px;
 }
