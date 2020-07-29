@@ -12,6 +12,12 @@ const API_URL = 'http://localhost:3000'
 export class ApiService {
     constructor(private http: HttpClient) {}
 
+    public login(name: string, password: string): Observable<any> {
+        return this.http
+        .post(API_URL + '/login', {"name":name,"password":password})
+        .pipe(catchError(this.handleError));
+    }
+
     public getAllMentor(): Observable<Mentor[]> {
         return this.http
         .get<Mentor[]>(API_URL + '/mentor')

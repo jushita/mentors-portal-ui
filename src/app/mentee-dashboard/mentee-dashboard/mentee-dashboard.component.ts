@@ -54,10 +54,7 @@ export class MenteeDashboardComponent implements OnInit {
       this.messages = data;
     });
     this.dataSource = new MatTableDataSource();
-
   }
-
-
 }
 
 @Component({

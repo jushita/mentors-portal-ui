@@ -9,6 +9,7 @@ import { MenteeDashboardModule } from '../mentee-dashboard/mentee-dashboard.modu
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from './services/api.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LoginModule } from '../login/login.module';
 
 
 
@@ -24,6 +25,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ContainerModule,
     MainContainerModule,
     MenteeDashboardModule,
+    LoginModule,
     FormsModule,
     ReactiveFormsModule,
   ],

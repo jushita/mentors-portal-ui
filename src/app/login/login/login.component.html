@@ -1,0 +1,25 @@
+<div class='header'>
+    <div class='topic-header'>
+        <h3>JWT Authentication</h3>
+    </div>
+</div>
+<div class='form-body'>
+    <div class='form'>
+        <div class='text-body'>
+            <h2 class='form-title'>Sign In</h2>
+            <hr>
+            <label class="label-name">Name</label>
+            <br>
+            <input type="text" #name><br><br>
+            <label class='label-password'>Password</label>
+            <br>
+            <input type="password" #password><br><br>
+            <button (click)="login(name.value, password.value)">Sign In</button>
+        </div>
+    </div>    
+</div>
+<div class='form-body'>
+    <span *ngIf="notAuthorized" class="notAuthorized">{{notAuthorized}}</span>
+</div>
+
+

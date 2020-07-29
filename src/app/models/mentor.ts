@@ -1,6 +1,6 @@
 export class Mentor {
-    public id;
-    public name;
+    public id?: number;
+    public name?: string;
     constructor(id: number, name: string) {
         this.id = id;
         this.name = name;
