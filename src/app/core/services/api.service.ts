@@ -6,7 +6,7 @@ import { Mentor } from 'src/app/models/mentor';
 import { Mentee } from 'src/app/models/mentee';
 import { Message } from 'src/app/models/message';
 
-const API_URL = 'http://localhost:3000'
+const API_URL = 'http://localhost:3000';
 
 @Injectable()
 export class ApiService {
