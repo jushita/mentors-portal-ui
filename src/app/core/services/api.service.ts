@@ -7,6 +7,7 @@ import { Mentee } from 'src/app/models/mentee';
 import { Message } from 'src/app/models/message';
 
 const API_URL = 'http://localhost:3000';
+const MICROSERVICE_URL = 'http://localhost:5000';
 
 @Injectable()
 export class ApiService {
@@ -14,7 +15,7 @@ export class ApiService {
 
     public login(name: string, password: string): Observable<any> {
         return this.http
-        .post(API_URL + '/login', {"name":name,"password":password})
+        .post(MICROSERVICE_URL + '/login', {"name":name,"password":password})
         .pipe(catchError(this.handleError));
     }
 

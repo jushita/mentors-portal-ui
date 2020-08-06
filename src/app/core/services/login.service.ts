@@ -10,5 +10,6 @@ export class LoginService {
 
   public login(user: string, password: string) {
     return this.api.login(user, password);
+    
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/core/services/api.service';
+import { LoginService } from 'src/app/core/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { ApiService } from 'src/app/core/services/api.service';
 export class LoginComponent implements OnInit {
   public welcomeMessage;
   public notAuthorized: string;
-  constructor(private http: HttpClient, private router: Router, private api: ApiService) { 
+  constructor(private http: HttpClient, private router: Router, private api: LoginService) { 
   }
 
   ngOnInit(): void {
@@ -23,6 +24,7 @@ export class LoginComponent implements OnInit {
           if(res) {
             localStorage.setItem('token', res.token as string);
           }
+          this.navigate();
         },
         error: (err) => {
           console.log(err);
@@ -30,5 +32,10 @@ export class LoginComponent implements OnInit {
         }
       });
       
+  }
+
+  navigate() {
+    let url = `/home`
+    this.router.navigate([url]);
   }
 }

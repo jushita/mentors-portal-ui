@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
   }
 
   navigate() {
-    let url = ''
+    let url = '/home'
     this.router.navigateByUrl(url)
   }
 
